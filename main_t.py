@@ -89,7 +89,7 @@ text_input.bind("<FocusOut>", on_focusout)
 text_input.pack(pady=10)
 
 # 单选框
-mode_var = tk.IntVar()
+mode_var = tk.IntVar(value=1)
 radio_dict = tk.Radiobutton(root, text="字典模式", variable=mode_var, value=1)
 radio_sentence = tk.Radiobutton(root, text="句词模式", variable=mode_var, value=2)
 radio_dict.pack(anchor='w')
@@ -110,7 +110,7 @@ text_output.pack(pady=10)
 # 设置全局快捷键
 keyboard.add_hotkey('alt+h', toggle_window)
 keyboard.add_hotkey('ctrl+enter', on_translate)
-
+keyboard.add_hotkey('ctrl+s', on_save)
 
 # 运行主循环
 root.mainloop()
